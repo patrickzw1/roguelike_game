@@ -11,6 +11,7 @@ def main() -> None:
     player_x = int(screen_width/2)
     player_y = int(screen_height/2)
 
+    # loading the font image
     tileset = tcod.tileset.load_tilesheet(
     	"../picture/font.png", 32, 8, tcod.tileset.CHARMAP_TCOD)
 

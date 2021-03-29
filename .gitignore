@@ -4,3 +4,4 @@ pyvenv.cfg
 share/
 bin/
 includ/
+__pycache__/
