@@ -3,6 +3,7 @@ import tcod.event
 from actions import Action, EscapedAction, MovementAction
 
 class EventHandler(tcod.event.EventDispatch[Action]):
+	# ev_quit is a method defined in EventDispatch, overriding here
 	def ev_quit(self, event:tcod.event.Quit) -> Optional[Action]:
 		raise SystemExit()
 
