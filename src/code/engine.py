@@ -20,11 +20,14 @@ class Engine:
 			if action is None:
 				continue
 			if isinstance(action, MovementAction):
-				self.player.move(dx=action.dx, dy=action.dy)
+				# try to figure out how this part work(tiles["walkable"][])?
+				if self.game_map.tiles["walkable"][self.player.x + action.dx, self.player.y + action.dy]:
+					self.player.move(dx=action.dx, dy=action.dy)
 			if isinstance(action, EscapedAction):
 				raise SystemExit()
 
 	def render(self, console:Console, context:Context) -> None:
+		self.game_map.render(console)
 		for entity in self.entities:
 			console.print(entity.x, entity.y, entity.char, fg=entity.color)
 		context.present(console)
